@@ -1,11 +1,9 @@
-.titulo {
-    color: gray;
-    text-align: center;
-}
+.back {
+    background-image: url(../../assets/sergiolarrain.jpg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: calc(100vh - 50px);
 
-.img {
-    width: 680px;
-    height: 350px;
-    display: block;
-    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
 }
