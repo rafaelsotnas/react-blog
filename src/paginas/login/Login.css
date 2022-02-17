@@ -1,0 +1,27 @@
+.back-login {
+    background-image: url(../../assets/img/billlee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100vh;
+    min-height: 100vh;
+}
+
+.texts {
+    font-weight: bold!important;
+    color: #727070!important;
+}
+
+.texts2 {
+    color: #9e9e9e!important; 
+}
+
+.button-style:hover {
+    color: #727070!important;
+}
+
+.text-decorator-none {
+    text-decoration: none;
+    color:#727070!important;
+}

@@ -1,0 +1,22 @@
+.box1 {
+    background-color: grey; 
+    height: 120px;
+}
+
+.box2 {
+    background-color: darkgrey;
+}
+
+.text {
+    color: white;
+    height: 2px!important;
+}
+
+.footer-social {
+    font-size: 60px;
+    color: white!important;
+}
+
+.footer-copy {
+    color: white;
+}
