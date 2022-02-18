@@ -17,11 +17,17 @@
     color: #9e9e9e!important; 
 }
 
-.button-style:hover {
-    color: #727070!important;
+.button-style {
+    border-color: white!important;
+    background-color: #727070!important;
+    color: white!important;
 }
 
 .text-decorator-none {
     text-decoration: none;
     color:#727070!important;
+}
+
+#usuario {
+
 }
