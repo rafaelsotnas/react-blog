@@ -33,7 +33,7 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha === user.senha) {
+        if (confirmarSenha == user.senha && user.senha.length >= 8) {
             cadastroUsuario(`usuarios/cadastrar`, user, setUserResult)
             alert("Usuário cadastrado com sucesso!")
         } else {
@@ -59,6 +59,7 @@ function CadastroUsuario() {
                             name="nome"
                             margin="normal"
                             fullWidth
+                            required
                         />
                         <TextField
                             value={user.usuario}
@@ -69,6 +70,7 @@ function CadastroUsuario() {
                             name="usuario"
                             margin="normal"
                             fullWidth
+                            required
                         />
                         <TextField
                             value={user.senha}
@@ -80,17 +82,21 @@ function CadastroUsuario() {
                             margin="normal"
                             type="password"
                             fullWidth
+                            required
+                            placeholder='
+                            Min. 8 caracteres'
                         />
                         <TextField
                             value={confirmarSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
                             id="confirmarSenha"
-                            label="ConfirmarSenha"
+                            label="Confirmar Senha"
                             variant="outlined"
                             name="confirmarSenha"
                             margin="normal"
                             type="password"
                             fullWidth
+                            required
                         />
                         <Box marginTop={2} textAlign="center">
                             <Link to="/login" className="text-decorator-none">
