@@ -1,0 +1,23 @@
+.img {
+    background-image: url(../../assets/img/night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100vh;
+    min-height: 100vh;
+}
+
+.texts2 {
+    font-weight: bold!important;
+    text-decoration: none!important;
+}
+
+.button-cancel {
+    margin-right: 20px!important;
+}
+
+.button-submit {
+    text-decoration: none!important;
+    background-color: #727070!important;
+}
