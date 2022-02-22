@@ -31,7 +31,7 @@ function Login() {
             await login(`/usuarios/logar`, userLogin, setToken)
             alert("Usuário logado com sucesso!");
         } catch (error) {
-            alert("Dados inconsistentes!")
+            alert("Dados inconsistentes!");
         }
     }
 

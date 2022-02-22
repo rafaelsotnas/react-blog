@@ -1,0 +1,17 @@
+.text-decorator-none {
+    text-decoration: none;
+}
+
+.back-panel {
+    background-color: #9e9e9e!important;
+    opacity: 0.8!important;
+}
+
+.button-update {
+    text-decoration: none!important;
+    background-color: #727070!important;
+}
+
+.text-head2 {
+    color: white!important;
+}

@@ -10,38 +10,38 @@ function Navbar() {
                 <Toolbar className="back-bar" variant="dense">
                     <Box className="cursor">
                         <Typography variant="h5" color="inherit">
-                            Blog Pessoal
+                            BLOG PESSOAL
                         </Typography>
                     </Box>
 
                     <Box className="caixa" display="flex">
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                home
+                                Home
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                postagens
+                                Postagens
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                temas
+                                Temas
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                cadastrar tema
+                                Cadastrar Tema
                             </Typography>
                         </Box>
                         <Link to="/login" className="text-decorator-none">
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                logout
+                                Logout
                             </Typography>
                         </Box>
                         </Link>

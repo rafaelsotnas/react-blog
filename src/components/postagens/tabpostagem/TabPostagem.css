@@ -1,0 +1,25 @@
+.bar2 {
+    margin-top: 47px;
+    background: linear-gradient(8deg, #727070 2%, #9e9e9e 99%)!important;
+    color: white!important;
+}
+
+.panel {
+    background-image: url(../../../assets/img/robertcapa.jpg);
+    background-color: #727070!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.text-mod {
+    margin-top: -43px;
+    background-color: #9e9e9e;
+    color: white!important;
+}
+
+.box-mod {
+    background-color: #9e9e9e;
+    color: white;
+}
