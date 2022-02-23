@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar() {
@@ -14,22 +14,22 @@ function Navbar() {
                         </Typography>
                     </Box>
 
-                    <Box className="caixa" display="flex">
+                    <Box display="flex">
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                <Link to="/home">Home</Link>
+                                <Link className="nav-route" to="/home">Home</Link>
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                            <Link to="/postagens">Postagens</Link>
+                                <Link className="nav-route" to="/postagens">Postagens</Link>
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                            <Link to="/temas">Temas</Link>
+                                <Link className="nav-route" to="/temas">Temas</Link>
                             </Typography>
                         </Box>
 
@@ -38,12 +38,12 @@ function Navbar() {
                                 Cadastrar Tema
                             </Typography>
                         </Box>
-                        <Link to="/login" className="text-decorator-none">
-                        <Box mx={1} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Logout
-                            </Typography>
-                        </Box>
+                        <Link className="nav-route" to="/login">
+                            <Box mx={1} className="cursor">
+                                <Typography variant="h6" color="inherit">
+                                    Logout
+                                </Typography>
+                            </Box>
                         </Link>
                     </Box>
 
