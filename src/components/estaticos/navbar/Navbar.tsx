@@ -17,19 +17,19 @@ function Navbar() {
                     <Box className="caixa" display="flex">
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Home
+                                <Link to="/home">Home</Link>
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Postagens
+                            <Link to="/postagens">Postagens</Link>
                             </Typography>
                         </Box>
 
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Temas
+                            <Link to="/temas">Temas</Link>
                             </Typography>
                         </Box>
 
