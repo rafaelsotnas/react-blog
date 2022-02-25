@@ -1,7 +1,20 @@
 .back-bar {
-    background: linear-gradient(22deg, #727070 20%, #9e9e9e 54%)!important;
-    color: white!important;
-    text-decoration: none!important;
+    background-image: url(../../../assets/img/sergiolarrain.jpg);
+
+    min-height: 380px;
+    height: 10vw;
+    width: auto;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    position: relative;
+}
+
+.container {
+    margin: 20px;
+    width: auto;
 }
 
 .cursor {

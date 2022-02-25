@@ -19,7 +19,7 @@ function CadastroPostagem() {
     const [token, setToken] = useLocalStorage('token')
 
     useEffect(() => {
-        if (token == '') {
+        if (token === '') {
             alert('É necessário estar logado!')
             history.push('/login')
         }

@@ -15,7 +15,7 @@ function Home() {
     const [token, setToken] = useLocalStorage('token');
 
     useEffect(() => {
-        if(token == '') {
+        if(token === '') {
             alert('Necessário fazer o login!')
             history.push('/login')
         }
@@ -24,7 +24,7 @@ function Home() {
     return (
         <>
             <Grid className="back" container direction="row" justifyContent="center" alignItems="center">
-                <Grid alignItems="center" item xs={6}>
+                <Grid className="container" alignItems="center" item xs={6}>
                     <Box paddingX={20}>
                         <Typography className="titulo" variant="h5" gutterBottom color="textPrimary" component="h5" align="center">Expresse-se!</Typography>
                     </Box>

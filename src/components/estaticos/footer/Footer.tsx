@@ -25,7 +25,7 @@ function Footer() {
                                 <LinkedInIcon className="footer-social" />
                             </a>
                         </Box>
-                        <Box className="box2">
+                        <Box>
                             <Box paddingTop={1}>
                                 <Typography className="footer-copy" variant="subtitle2" align="center" gutterBottom>© 2022 Copyright</Typography>
                             </Box>
