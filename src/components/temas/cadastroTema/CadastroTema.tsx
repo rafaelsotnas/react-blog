@@ -1,12 +1,13 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Container, Typography, TextField, Button } from '@material-ui/core';
-import useLocalStorage from 'react-use-localstorage';
 
 import Tema from '../../../models/Tema';
 
 import './CadastroTema.css';
 import { buscaID, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function CadastroTema() {
 
@@ -15,7 +16,9 @@ function CadastroTema() {
     /*Capturar parametros enviados pela URL,
     podendo cadastrar ou alterar o tema, através do ID.*/
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage('token')
+    const token = useSelector<TokenState, TokenState['tokens']>(
+        (state) => state.tokens
+    );
 
     const [tema, setTema] = useState<Tema>({
         id: 0, descricao: ''

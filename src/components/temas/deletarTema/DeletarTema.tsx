@@ -7,12 +7,16 @@ import { buscaID, deleteID } from "../../../services/Service";
 import Tema from "../../../models/Tema";
 
 import './DeletarTema.css';
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function DeletarTema() {
 
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage('token')
+    const token = useSelector<TokenState, TokenState['tokens']>(
+        (state) => state.tokens
+    );
     const [tema, setTema] = useState<Tema>();
 
     useEffect(() => {

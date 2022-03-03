@@ -9,6 +9,8 @@ import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 
 import './CadastroPostagem.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function CadastroPostagem() {
 
@@ -16,7 +18,9 @@ function CadastroPostagem() {
     const { id } = useParams<{ id: string }>();
     /*Armazerará os temas.*/
     const [temas, setTemas] = useState<Tema[]>([]);
-    const [token, setToken] = useLocalStorage('token')
+    const token = useSelector<TokenState, TokenState['tokens']>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token === '') {
