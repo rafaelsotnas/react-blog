@@ -7,6 +7,8 @@ import { TokenState } from '../../store/tokens/tokensReducer';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
+import { toast } from 'react-toastify';
+
 import './Home.css';
 import { Link } from "react-router-dom";
 
@@ -19,7 +21,16 @@ function Home() {
 
     useEffect(() => {
         if(token === '') {
-            alert('Necessário fazer o login!')
+            toast.error('Necessário fazer o login!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
             history.push('/login')
         }
     }, [token])

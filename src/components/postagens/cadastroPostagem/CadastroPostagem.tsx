@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from '@material-ui/core';
 import { useHistory, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 
 import { busca, buscaID, post, put } from '../../../services/Service';
 
@@ -24,7 +24,16 @@ function CadastroPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('É necessário estar logado!')
+            toast.error('É necessário fazer o login!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
             history.push('/login')
         }
     }, [history, token])
@@ -87,14 +96,32 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada!');
+            toast.success('Postagem atualizada!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado!')
+            toast.success('Tema cadastrado!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         }
         back()
     }

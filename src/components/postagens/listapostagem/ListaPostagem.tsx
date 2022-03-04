@@ -8,6 +8,8 @@ import { Box, Card, CardActions, CardContent, Button, Typography } from '@materi
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 
+import { toast } from 'react-toastify';
+
 import './ListaPostagem.css';
 
 function ListaPostagem() {
@@ -20,7 +22,16 @@ function ListaPostagem() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Faça o login para ter acesso!")
+            toast.error('É necessário fazer o login!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
             history.push('/login')
         }
 

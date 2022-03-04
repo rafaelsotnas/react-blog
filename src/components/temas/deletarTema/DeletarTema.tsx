@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { toast } from 'react-toastify';
 
 import { buscaID, deleteID } from "../../../services/Service";
 import Tema from "../../../models/Tema";
@@ -21,7 +21,16 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == '') {
-            alert('É necessário estar logado!')
+            toast.error('É necessário fazer o login!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
             history.push('/login')
         }
     }, [history, token])
@@ -47,7 +56,16 @@ function DeletarTema() {
                 'Authorization': token
             }
         });
-        alert('Tema deletado!')
+        toast.success('Tema deletado!', {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'colored',
+            progress: undefined
+        });
     }
 
     /*Caso não desejar excluir, redireciona pra tela de temas.*/

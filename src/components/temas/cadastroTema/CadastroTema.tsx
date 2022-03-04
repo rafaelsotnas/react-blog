@@ -4,6 +4,8 @@ import { Container, Typography, TextField, Button } from '@material-ui/core';
 
 import Tema from '../../../models/Tema';
 
+import { toast } from 'react-toastify';
+
 import './CadastroTema.css';
 import { buscaID, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
@@ -26,7 +28,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == '') {
-            alert('É necessário estar logado!')
+            toast.error('É necessário fazer o login!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
             history.push('/login')
         }
     }, [history, token])
@@ -66,14 +77,32 @@ function CadastroTema() {
                     'Authorization': token
                 }
             })
-            alert('Tema atualizado!');
+            toast.success('Tema atualizado!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         } else {
             post(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado!')
+            toast.success('Tema cadastrado!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         }
         back()
     }

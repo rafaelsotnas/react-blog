@@ -3,6 +3,8 @@ import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import { toast } from 'react-toastify';
+
 import { addToken } from '../../store/tokens/actions';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
@@ -32,9 +34,27 @@ function Login() {
         e.preventDefault();
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
-            alert("Usuário logado com sucesso!");
+            toast.success('Usuário logado!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         } catch (error) {
-            alert("Dados inconsistentes!");
+            toast.error('Dados inconsistentes!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         }
     }
 

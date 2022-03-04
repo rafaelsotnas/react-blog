@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 
+import { toast } from 'react-toastify';
+
 import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
 import './ListaTema.css';
@@ -20,7 +22,16 @@ function ListaTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Faça o login para ter acesso!")
+            toast.error('É necessário fazer o login!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
             history.push('/login')
         }
 

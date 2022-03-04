@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 
+import { toast } from 'react-toastify';
+
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
 
@@ -46,9 +48,27 @@ function CadastroUsuario() {
         e.preventDefault()
         if (confirmarSenha ===  user.senha && user.senha.length >= 8) {
             cadastroUsuario(`usuarios/cadastrar`, user, setUserResult)
-            alert("Usuário cadastrado com sucesso!");
+            toast.success('Usuário cadastrado com sucesso!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         } else {
-            alert("Verifique se os campos foram preenchidos corretamente.");
+            toast.error('Verifique se os campos foram preenchidos corretamente!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
         }
     }
 
